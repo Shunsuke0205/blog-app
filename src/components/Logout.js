@@ -12,15 +12,15 @@ const Logout = ({ setIsAuth }) => {
         localStorage.clear();
         setIsAuth(false);
         navigate("/login");
-      })
+      });
+  };
 
-  }
   return (
     <div>
       <p>Are you going to Logout?</p>
       <button onClick={logout}>Logout</button>
-      Logout</div>
-  )
+    </div>
+  );
 }
 
 export default Logout

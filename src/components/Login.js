@@ -13,16 +13,15 @@ const Login = ({ setIsAuthenticated }) => {
         localStorage.setItem("isAuthenticated", true);
         setIsAuthenticated(true);
         navigate("/");
-      })
+      });
+  };
 
-  }
   return (
     <div>
       <p>Login to start</p>
       <button onClick={loginWithGoogle}>Login with Goolge</button>
-      Login
     </div>
-  )
+  );
 }
 
 export default Login
