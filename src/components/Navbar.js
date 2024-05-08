@@ -4,7 +4,7 @@ import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faFilePen, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar = () => {
+const Navbar = ({ isAuthenticated }) => {
   return (
     <nav>
       <Link to="/">
@@ -15,10 +15,17 @@ const Navbar = () => {
         <FontAwesomeIcon icon={faFilePen} />
         Post
       </Link>
-      <Link to="/login">
-        <FontAwesomeIcon icon={faArrowRightToBracket} />
-        Login
-      </Link>
+      {isAuthenticated ? (
+        <Link to={"/logout"}>
+          <FontAwesomeIcon icon={faArrowRightToBracket} />
+          Logout
+        </Link>
+      ) : (
+        <Link to="/login">
+          <FontAwesomeIcon icon={faArrowRightToBracket} />
+          Login
+        </Link>
+      )}
     </nav>
   )
 }
