@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 import { useState } from 'react';
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem("isAuthenticated") || false);
 
   return (
     <Router>
